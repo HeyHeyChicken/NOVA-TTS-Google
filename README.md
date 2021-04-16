@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/HeyHeyChicken/NOVA-Blank-Skill/blob/master/resources/github-logo.png" alt="NOVA" width="300">
+<img src="https://github.com/HeyHeyChicken/NOVA-TTS-Google/blob/master/resources/github-logo.png" alt="NOVA" width="300">
 
 **NOVA - Blank Skill** is a skill for your [NOVA](//github.com/HeyHeyChicken/NOVA) assistant.<br>
 This skill will allow your assistant to answer you (connection needed) with the Google's voice.
@@ -17,6 +17,12 @@ This skill will allow your assistant to answer you (connection needed) with the 
 ## Features
 
 This skill will allow your assistant to answer you (connection needed) with the Google's voice.
+
+## Support and contribution
+
+I provide support for all users through [GitHub issues](//github.com/HeyHeyChicken/NOVA-TTS-Google/issues).
+
+If you would like to contribute to this project, make sure you first read the [guide for contributors](//github.com/HeyHeyChicken/NOVA/blob/master/CONTRIBUTING.md).
 
 <br>
 <br>
