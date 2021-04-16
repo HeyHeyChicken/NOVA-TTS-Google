@@ -3,7 +3,7 @@
 
 **NOVA - Blank Skill** is a skill for your [NOVA](//github.com/HeyHeyChicken/NOVA) assistant.<br>
 This skill will allow your assistant to answer you (connection needed) with the Google's voice.
-<br><br>
+<br>
 </div>
 
 <br>
