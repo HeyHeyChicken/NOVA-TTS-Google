@@ -12,7 +12,7 @@ This skill will allow your assistant to answer you (connection needed) with the 
 
 1) Go to your NOVA's server UI (the default URL is "http://localhost:8080/")
 2) Go to the "Skills" tab.
-3) Find the "Install from GitHub" input, paste your GitHub skill's URL, and click install.
+3) Find the "TTS - Google" skill, open the modal and click on the "Install" button.
 
 ## Features
 
