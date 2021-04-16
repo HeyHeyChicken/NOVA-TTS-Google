@@ -2,10 +2,8 @@
 <img src="https://github.com/HeyHeyChicken/NOVA-Blank-Skill/blob/master/resources/github-logo.svg" alt="NOVA" width="300">
 
 **NOVA - Blank Skill** is a skill for your [NOVA](//github.com/HeyHeyChicken/NOVA) assistant.<br>
-This skill is useless, except to provide you an architecture as an example to start your skills development.
+This skill will allow your assistant to answer you (connection needed) with the Google's voice.
 <br><br>
-
-<img src="https://github.com/HeyHeyChicken/NOVA-Blank-Skill/blob/master/resources/github-screenshot.jpg" alt="NOVA" width="800">
 </div>
 
 <br>
@@ -18,9 +16,9 @@ This skill is useless, except to provide you an architecture as an example to st
 
 ## Features
 
-- Add your skill features here.
+This skill will allow your assistant to answer you (connection needed) with the Google's voice.
 
 <br>
 <br>
 
-Created by [Antoine Duval (HeyHeyChicken)](//antoine.cuffel.fr) with ❤ and ☕ (chocolate) in [Déville-lès-Rouen](//en.wikipedia.org/wiki/Déville-lès-Rouen).
+Created by [Antoine Duval (HeyHeyChicken)](//antoine.cuffel.fr) with ❤ and ☕ (chocolate) in [Mesnil-Panneville](//en.wikipedia.org/wiki/Mesnil-Panneville).
