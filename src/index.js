@@ -12,34 +12,35 @@ const LIBRARIES = {
 class TTSGoogle extends LIBRARIES.Skill{
   constructor(_main, _settings) {
     super(_main, _settings);
+    const SELF = this;
 
     // Nous definissons le dossier racine du skill
-    this.RootPath = LIBRARIES.Path.join(_main.DirName, "/lib/skills/HeyHeyChicken_NOVA-TTS-Google/src/");
+    SELF.RootPath = LIBRARIES.Path.join(_main.DirName, "/lib/skills/HeyHeyChicken_NOVA-TTS-Google/src/");
     // Nous definissons le dossier contenant le fichier json d'identification aux services Google
-    this.JsonPath = LIBRARIES.Path.join(this.RootPath, "Put_Your_Google_TTS_Identifiers_Json_File_Here/");
+    SELF.JsonPath = LIBRARIES.Path.join(SELF.RootPath, "Put_Your_Google_TTS_Identifiers_Json_File_Here/", "identifiers.json");
     // Nous definissons le dossier contenant les futurs fichiers mp3 à jouer.
-    this.MP3FolderPath = LIBRARIES.Path.join(_main.DirName, "/public/mp3/TTS/");
+    SELF.MP3FolderPath = LIBRARIES.Path.join(_main.DirName, "/public/mp3/TTS/");
+    SELF.JsonFileName = "identifiers.json";
 
-    // Nous tentons de réupérer le fichier json d'identification aux services Google
-    this.KeyFile = LIBRARIES.FS.readdirSync(this.JsonPath).filter(e => e.endsWith(".json"))[0];
-
-    // SI le fichier json d'identification aux services Google est présent, nous chargons le mode "payant" du TTS de Google.
-    if(this.KeyFile !== undefined){
-      this.PayingClient = new LIBRARIES.PayingGoogleTTS.TextToSpeechClient({
-        projectId: this.Main.Settings.Google.TextToSpeech.ProjectID,
-        keyFilename: this.JsonPath + this.KeyFile
+    if(SELF.Settings.project_id != null){
+      LIBRARIES.FS.writeFileSync(SELF.JsonPath, JSON.stringify(SELF.Settings));
+      SELF.PayingClient = new LIBRARIES.PayingGoogleTTS.TextToSpeechClient({
+        projectId: SELF.Settings.project_id,
+        keyFilename: SELF.JsonPath
       });
     }
     else{
-      _main.Log("NOVA-TTS-Google : No Google TTS identifiers json file found, we'll use the free version of Google TTS. If you want to use the paid version, you have to put your json file into this folder : \"" + this.JsonPath + "\".", "white");
+      if(LIBRARIES.FS.existsSync(SELF.JsonPath)){
+        LIBRARIES.FS.unlinkSync(SELF.JsonPath);
+      }
+      _main.Log("NOVA-TTS-Google : No Google TTS identifiers settings found, we'll use the free version of Google TTS. If you want to use the paid version, you have to put your json file content into this skill settings tab.", "white");
+
     }
 
-    const SELF = this;
-
-    this.Main.TTS = function (_socket, _text, _callback){
+    SELF.Main.TTS = function (_socket, _text, _callback){
       if(_text !== undefined){
         if(_text !== undefined){
-          if(SELF.KeyFile !== undefined){
+          if(SELF.Settings.project_id !== null){
             SELF.PayingTTS(_socket, _text, _callback);
           }
           else{
@@ -72,7 +73,7 @@ class TTSGoogle extends LIBRARIES.Skill{
     const LOCAL_PATH = LIBRARIES.Path.join( "/mp3/TTS/", FILE_NAME);
 
     await writeFile(ABSOLUTE_PATH, response.audioContent, "binary");
-    _socket.emit("play_audio", [new LIBRARIES.Audio(LOCAL_PATH, SELF.Main.Settings.Google.TextToSpeech.PlaybackRate)]);
+    _socket.emit("play_audio", [new LIBRARIES.Audio(LOCAL_PATH, SELF.Settings.PlaybackRate)]);
     if(_callback !== undefined){
       _callback(_text);
     }
