@@ -65,9 +65,9 @@ class TTSGoogle extends LIBRARIES.Skill{
     // Write the binary audio content to a local file
     const writeFile = LIBRARIES.Util.promisify(LIBRARIES.FS.writeFile);
 
-    const NAME  = LIBRARIES.Path.join("/mp3/TTS/GoogleTTS-", new Date().getTime() + ".mp3");
+    const NAME  = LIBRARIES.Path.join("/", "mp3/TTS/GoogleTTS-" + new Date().getTime() + ".mp3");
 
-    const FILE_NAME = LIBRARIES.Path.join("/GoogleTTS-", new Date().getTime() + ".mp3");
+    const FILE_NAME = LIBRARIES.Path.join("/", "GoogleTTS-" + new Date().getTime() + ".mp3");
     const ABSOLUTE_PATH = LIBRARIES.Path.join(SELF.Main.DirName, "/public/mp3/TTS/", FILE_NAME);
     const LOCAL_PATH = LIBRARIES.Path.join( "/mp3/TTS/", FILE_NAME);
 
@@ -87,7 +87,7 @@ class TTSGoogle extends LIBRARIES.Skill{
       _text = _text.substring(0, MAX_CHARACTERS);
     }
 
-    const FILE_NAME = LIBRARIES.Path.join("/GoogleTTS-", new Date().getTime() + ".mp3");
+    const FILE_NAME = LIBRARIES.Path.join("/", "GoogleTTS-" + new Date().getTime() + ".mp3");
     const ABSOLUTE_PATH = LIBRARIES.Path.join(SELF.Main.DirName, "/public/mp3/TTS/", FILE_NAME);
     const LOCAL_PATH = LIBRARIES.Path.join( "/mp3/TTS/", FILE_NAME);
 
