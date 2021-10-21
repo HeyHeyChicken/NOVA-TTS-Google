@@ -56,7 +56,7 @@ class TTSGoogle extends LIBRARIES.Skill{
 
     const request = {
       input: {text: _text},
-      voice: {languageCode: this.Main.Settings.Language, ssmlGender: "NEUTRAL"},
+      voice: {languageCode: this.Main.Settings.Language, ssmlGender: SELF.Settings.Gender},
       audioConfig: {audioEncoding: "MP3"},
     };
 
