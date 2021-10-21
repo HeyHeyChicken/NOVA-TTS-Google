@@ -89,7 +89,7 @@ class TTSGoogle extends LIBRARIES.Skill{
 
     const FILE_NAME = LIBRARIES.Path.join("/", "GoogleTTS-" + new Date().getTime() + ".mp3");
     const ABSOLUTE_PATH = LIBRARIES.Path.join(SELF.Main.DirName, "/public/mp3/TTS/", FILE_NAME);
-    const LOCAL_PATH = "http://localhost:" + SELF.Main.Settings.WebServerPort + "/mp3/TTS/" + FILE_NAME;
+    const LOCAL_PATH = "/mp3/TTS/" + FILE_NAME;
 
     const FILE = LIBRARIES.FS.createWriteStream(ABSOLUTE_PATH);
     const URL = "https://translate.google.com/translate_tts?ie=UTF-8&tl=" + this.Main.Settings.Language + "&client=tw-ob&q=" + encodeURIComponent(_text);
