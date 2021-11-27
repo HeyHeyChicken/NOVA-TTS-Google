@@ -1,7 +1,7 @@
 <div align="center">
-<img src="https://github.com/HeyHeyChicken/NOVA-TTS-Google/blob/main/resources/github-logo.png" alt="NOVA" width="300">
+    <img src="https://github.com/HeyHeyChicken/NOVA/blob/master/resources/github-logo.svg" alt="NOVA" width="300">
 
-**NOVA - Blank Skill** is a skill for your [NOVA](//github.com/HeyHeyChicken/NOVA) assistant.<br>
+**NOVA - TTS Google** is a skill for your [NOVA](//github.com/HeyHeyChicken/NOVA) assistant.<br>
 This skill will allow your assistant to answer you (connection needed) with the Google's voice.
 <br>
 </div>
