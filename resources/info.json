@@ -1,0 +1,14 @@
+{
+	"worksOffline" : false,
+	"description" : {
+		"fr-FR": "Cette compétence permettra à votre assistant de vous répondre vocalement avec la voix de Google.<br/><br/>Google vous offre ce service gratuitement pour lire des phrases jusqu'à 200 caractères. Si vous souhaitez étendre ses possibilités, vous devrez entrer votre clé API dans les paramètres de la compétence.",
+		"en-US": "This skill will allow your assistant to answer you vocally with the Google's voice.<br/><br/>Google provides this service to you free of charge to read sentences of up to 200 characters. If you want to extend its possibilities, you will have to enter your API key in the skill settings."
+	},
+	"language": [
+		"fr-FR",
+		"en-US",
+		"es-ES",
+		"it-IT",
+		"de-DE"
+	]
+}
